@@ -1,0 +1,39 @@
+Oct 23 03:12:44 lab-server sshd[4826]: Accepted password for uman from 198.51.100.99 port 60112 ssh2
+Oct 23 09:02:14 lab-server sshd[4823]: Accepted password for uman from 198.51.100.23 port 51234 ssh2
+Oct 23 09:03:02 lab-server sshd[4824]: Accepted publickey for uman from 198.51.100.23 port 51235 ssh2
+Oct 23 12:41:55 lab-server sshd[4827]: Accepted password for uman from 198.51.100.23 port 53310 ssh2
+Oct 23 13:05:01 lab-server sshd[4826]: pam_unix(sshd:session): session opened for user uman
+Oct 23 14:02:10 lab-server sshd[4823]: Failed password for root from 203.0.113.7 port 42000 ssh2
+Oct 23 14:02:41 lab-server sshd[4823]: Failed password for admin from 203.0.113.7 port 42001 ssh2
+Oct 23 14:03:12 lab-server sshd[4824]: Failed password for root from 203.0.113.7 port 42002 ssh2
+Oct 23 14:03:43 lab-server sshd[4824]: Failed password for admin from 203.0.113.7 port 42003 ssh2
+Oct 23 14:04:14 lab-server sshd[4825]: Failed password for root from 203.0.113.7 port 42004 ssh2
+Oct 23 14:04:45 lab-server sshd[4825]: Failed password for ubuntu from 203.0.113.7 port 42005 ssh2
+Oct 23 14:05:16 lab-server sshd[4826]: Failed password for root from 203.0.113.7 port 42006 ssh2
+Oct 23 14:05:47 lab-server sshd[4826]: Failed password for admin from 203.0.113.7 port 42007 ssh2
+Oct 23 14:06:18 lab-server sshd[4827]: Failed password for root from 203.0.113.7 port 42008 ssh2
+Oct 23 14:06:49 lab-server sshd[4827]: Failed password for test from 203.0.113.7 port 42009 ssh2
+Oct 23 14:07:20 lab-server sshd[4821]: Failed password for root from 203.0.113.7 port 42010 ssh2
+Oct 23 14:07:51 lab-server sshd[4821]: Failed password for admin from 203.0.113.7 port 42011 ssh2
+Oct 23 14:09:03 lab-server sshd[4823]: Connection closed by authenticating user root 203.0.113.7 port 42013 [preauth]
+Oct 23 14:09:22 lab-server sshd[4823]: Accepted password for root from 203.0.113.7 port 42013 ssh2
+Oct 23 15:10:00 lab-server sshd[4824]: Failed password for jdoe from 203.0.113.21 port 33000 ssh2
+Oct 23 15:19:00 lab-server sshd[4826]: Failed password for jdoe from 203.0.113.22 port 33001 ssh2
+Oct 23 15:28:00 lab-server sshd[4821]: Failed password for jdoe from 203.0.113.23 port 33002 ssh2
+Oct 23 15:37:00 lab-server sshd[4823]: Failed password for jdoe from 203.0.113.24 port 33003 ssh2
+Oct 23 15:46:00 lab-server sshd[4825]: Failed password for jdoe from 203.0.113.25 port 33004 ssh2
+Oct 23 16:20:00 lab-server sshd[4827]: Invalid user oracle from 203.0.113.44 port 51000
+Oct 23 16:20:02 lab-server sshd[4827]: Failed password for invalid user oracle from 203.0.113.44 port 51000 ssh2
+Oct 23 16:20:45 lab-server sshd[4827]: Invalid user test from 203.0.113.44 port 51001
+Oct 23 16:20:47 lab-server sshd[4827]: Failed password for invalid user test from 203.0.113.44 port 51001 ssh2
+Oct 23 16:21:30 lab-server sshd[4821]: Invalid user guest from 203.0.113.44 port 51002
+Oct 23 16:21:32 lab-server sshd[4821]: Failed password for invalid user guest from 203.0.113.44 port 51002 ssh2
+Oct 23 16:22:15 lab-server sshd[4822]: Invalid user postgres from 203.0.113.44 port 51003
+Oct 23 16:22:17 lab-server sshd[4822]: Failed password for invalid user postgres from 203.0.113.44 port 51003 ssh2
+Oct 23 16:23:00 lab-server sshd[4823]: Invalid user mysql from 203.0.113.44 port 51004
+Oct 23 16:23:02 lab-server sshd[4823]: Failed password for invalid user mysql from 203.0.113.44 port 51004 ssh2
+Oct 23 16:23:45 lab-server sshd[4823]: Invalid user nagios from 203.0.113.44 port 51005
+Oct 23 16:23:47 lab-server sshd[4823]: Failed password for invalid user nagios from 203.0.113.44 port 51005 ssh2
+Oct 23 16:24:30 lab-server sshd[4824]: Invalid user zabbix from 203.0.113.44 port 51006
+Oct 23 16:24:32 lab-server sshd[4824]: Failed password for invalid user zabbix from 203.0.113.44 port 51006 ssh2
+Oct 23 18:00:12 lab-server sshd[4821]: Received disconnect from 198.51.100.23 port 53310:11: disconnected by user

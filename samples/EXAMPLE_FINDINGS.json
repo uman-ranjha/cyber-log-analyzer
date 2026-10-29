@@ -1,0 +1,128 @@
+[
+  {
+    "title": "Successful login from 203.0.113.7 after 12 failures \u2014 possible compromise",
+    "severity": "critical",
+    "mitre_attack": {
+      "technique_id": "T1078",
+      "technique_name": "Valid Accounts"
+    },
+    "description": "User 'root' logged in successfully from 203.0.113.7, which had 12 failed attempts in the previous 60 minutes. Treat as a potential account compromise until verified.",
+    "indicators": {
+      "source_ip": "203.0.113.7",
+      "user": "root",
+      "login_time": "2026-10-23T14:09:22",
+      "prior_failures": 12,
+      "targeted_users": [
+        "admin",
+        "root",
+        "test",
+        "ubuntu"
+      ]
+    }
+  },
+  {
+    "title": "Possible brute-force attack from 203.0.113.7",
+    "severity": "high",
+    "mitre_attack": {
+      "technique_id": "T1110",
+      "technique_name": "Brute Force"
+    },
+    "description": "12 failed login attempts from 203.0.113.7 within 10 minutes, targeting 4 username(s): admin, root, test, ubuntu.",
+    "indicators": {
+      "source_ip": "203.0.113.7",
+      "failed_attempts": 12,
+      "window_minutes": 10,
+      "targeted_users": [
+        "admin",
+        "root",
+        "test",
+        "ubuntu"
+      ],
+      "first_seen": "2026-10-23T14:02:10",
+      "last_seen": "2026-10-23T14:07:51"
+    }
+  },
+  {
+    "title": "Possible brute-force attack from 203.0.113.44",
+    "severity": "high",
+    "mitre_attack": {
+      "technique_id": "T1110",
+      "technique_name": "Brute Force"
+    },
+    "description": "14 failed login attempts from 203.0.113.44 within 10 minutes, targeting 7 username(s): guest, mysql, nagios, oracle, postgres.",
+    "indicators": {
+      "source_ip": "203.0.113.44",
+      "failed_attempts": 14,
+      "window_minutes": 10,
+      "targeted_users": [
+        "guest",
+        "mysql",
+        "nagios",
+        "oracle",
+        "postgres",
+        "test",
+        "zabbix"
+      ],
+      "first_seen": "2026-10-23T16:20:00",
+      "last_seen": "2026-10-23T16:24:32"
+    }
+  },
+  {
+    "title": "Possible password spraying against user 'jdoe'",
+    "severity": "high",
+    "mitre_attack": {
+      "technique_id": "T1110.003",
+      "technique_name": "Brute Force: Password Spraying"
+    },
+    "description": "User 'jdoe' saw failed logins from 5 distinct IPs within 60 minutes \u2014 a classic spray pattern that evades per-IP rate limits.",
+    "indicators": {
+      "targeted_user": "jdoe",
+      "source_ips": [
+        "203.0.113.21",
+        "203.0.113.22",
+        "203.0.113.23",
+        "203.0.113.24",
+        "203.0.113.25"
+      ],
+      "failed_attempts": 5,
+      "first_seen": "2026-10-23T15:10:00",
+      "last_seen": "2026-10-23T15:46:00"
+    }
+  },
+  {
+    "title": "Username enumeration from 203.0.113.44",
+    "severity": "medium",
+    "mitre_attack": {
+      "technique_id": "T1590",
+      "technique_name": "Gather Victim Network Information"
+    },
+    "description": "7 attempts against non-existent usernames from 203.0.113.44 (guest, mysql, nagios, oracle, postgres). The attacker is mapping valid accounts for a later brute-force run.",
+    "indicators": {
+      "source_ip": "203.0.113.44",
+      "probed_usernames": [
+        "guest",
+        "mysql",
+        "nagios",
+        "oracle",
+        "postgres",
+        "test",
+        "zabbix"
+      ],
+      "attempts": 7
+    }
+  },
+  {
+    "title": "Off-hours login: 'uman' from 198.51.100.99 at 03:12",
+    "severity": "medium",
+    "mitre_attack": {
+      "technique_id": "T1078",
+      "technique_name": "Valid Accounts"
+    },
+    "description": "Successful login outside expected hours (00:00-05:00). Verify with the user whether this was legitimate.",
+    "indicators": {
+      "user": "uman",
+      "source_ip": "198.51.100.99",
+      "login_time": "2026-10-23T03:12:44"
+    }
+  }
+]
