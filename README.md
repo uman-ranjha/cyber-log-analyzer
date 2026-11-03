@@ -23,6 +23,29 @@ The brute force check uses a sliding 10 minute window, not fixed clock
 buckets. I did it that way so a slow attack spread across a boundary
 still gets caught, but a couple of typos from one person don't.
 
+## What I do with a finding
+
+Flagging something is only half the job. A report nobody acts on is
+just a list. So every finding in the report starts with a status of
+`open`, and I work it like this:
+
+1. **Verify it first.** A bunch of failed logins can be a real attack,
+   but it can also be someone fat-fingering a password or a script
+   with a stale credential. I check the user, the IP, and the timing
+   before I call it an incident.
+2. **Contain it.** If it looks real, the source IP gets blocked or
+   rate-limited, and any account that logged in after a run of
+   failures gets its password reset. A successful login after failures
+   gets treated as a compromise until I can prove it isn't.
+3. **Hand it off cleanly.** The report is written so someone else can
+   pick it up without me in the room: what happened, how bad it is,
+   which MITRE technique it maps to, and the indicators they need.
+4. **Track it until it's closed.** The status moves from `open` to
+   `investigating` to `remediated` as the work happens, and a finding
+   only counts as closed once the fix is confirmed, not just
+   attempted. That's the part I think matters most on a real SOC
+   team: knowing what's still open, not just what was found.
+
 ## How to run it
 
 ```bash

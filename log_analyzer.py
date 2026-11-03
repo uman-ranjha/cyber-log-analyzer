@@ -119,11 +119,17 @@ class Finding:
     technique_name: str
     description: str
     indicators: dict = field(default_factory=dict)
+    # Remediation tracking: "open" -> "investigating" -> "remediated".
+    # New findings start open; the analyst updates the status in the
+    # JSON as the finding is worked, and it only counts as closed
+    # once the fix is confirmed.
+    status: str = "open"
 
     def to_dict(self) -> dict:
         return {
             "title": self.title,
             "severity": self.severity,
+            "status": self.status,
             "mitre_attack": {
                 "technique_id": self.technique,
                 "technique_name": self.technique_name,
@@ -442,6 +448,7 @@ def markdown_report(
             f"### {i}. {finding.title}",
             f"",
             f"- **Severity:** {finding.severity.upper()}",
+            f"- **Status:** {finding.status.upper()}",
             f"- **MITRE ATT&CK:** {finding.technique} — "
             f"{finding.technique_name}",
             f"- **Details:** {finding.description}",

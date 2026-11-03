@@ -2,6 +2,7 @@
   {
     "title": "Successful login from 203.0.113.7 after 12 failures \u2014 possible compromise",
     "severity": "critical",
+    "status": "open",
     "mitre_attack": {
       "technique_id": "T1078",
       "technique_name": "Valid Accounts"
@@ -23,6 +24,7 @@
   {
     "title": "Possible brute-force attack from 203.0.113.7",
     "severity": "high",
+    "status": "open",
     "mitre_attack": {
       "technique_id": "T1110",
       "technique_name": "Brute Force"
@@ -45,6 +47,7 @@
   {
     "title": "Possible brute-force attack from 203.0.113.44",
     "severity": "high",
+    "status": "open",
     "mitre_attack": {
       "technique_id": "T1110",
       "technique_name": "Brute Force"
@@ -70,6 +73,7 @@
   {
     "title": "Possible password spraying against user 'jdoe'",
     "severity": "high",
+    "status": "open",
     "mitre_attack": {
       "technique_id": "T1110.003",
       "technique_name": "Brute Force: Password Spraying"
@@ -92,6 +96,7 @@
   {
     "title": "Username enumeration from 203.0.113.44",
     "severity": "medium",
+    "status": "open",
     "mitre_attack": {
       "technique_id": "T1590",
       "technique_name": "Gather Victim Network Information"
@@ -114,6 +119,7 @@
   {
     "title": "Off-hours login: 'uman' from 198.51.100.99 at 03:12",
     "severity": "medium",
+    "status": "open",
     "mitre_attack": {
       "technique_id": "T1078",
       "technique_name": "Valid Accounts"

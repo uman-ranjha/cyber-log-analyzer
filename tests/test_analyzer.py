@@ -16,6 +16,7 @@ from log_analyzer import (  # noqa: E402
     detect_password_spray,
     detect_success_after_failure,
     detect_username_enumeration,
+    markdown_report,
     parse_line,
     parse_log,
 )
@@ -131,6 +132,17 @@ class TestDetectors(unittest.TestCase):
         events = [ev(BASE.replace(hour=9, minute=2), "accepted", "uman",
                      "198.51.100.23")]
         self.assertEqual(detect_off_hours_login(events), [])
+
+    def test_findings_start_open_for_remediation_tracking(self):
+        events = [ev(BASE + timedelta(seconds=i * 30), "failed", "root",
+                     "203.0.113.7") for i in range(6)]
+        findings = analyze(events)
+        self.assertTrue(findings)
+        for finding in findings:
+            self.assertEqual(finding.status, "open")
+            self.assertEqual(finding.to_dict()["status"], "open")
+        report = markdown_report(events, findings, "sample_auth.log")
+        self.assertIn("- **Status:** OPEN", report)
 
     def test_severity_ordering(self):
         events = [ev(BASE + timedelta(seconds=i * 30), "failed", "root",
