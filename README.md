@@ -117,12 +117,3 @@ a regression test.
 documentation ranges (`192.0.2.0/24`, `198.51.100.0/24`,
 `203.0.113.0/24`), which are reserved and never route on the real
 internet.
-
-## What it doesn't do yet
-
-- It only parses classic syslog sshd format. It doesn't handle journald
-  JSON or cloud logs like CloudTrail yet.
-- No IP reputation or GeoIP lookup.
-- The thresholds are fixed. On a busy jump box you'd want baselines
-  per host to cut down false positives, and that's the next thing
-  I'd add.
