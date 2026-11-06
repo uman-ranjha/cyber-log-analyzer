@@ -97,7 +97,7 @@ samples/
   EXAMPLE_REPORT.md             # example report output
   EXAMPLE_FINDINGS.json         # example JSON output
 tests/
-  test_analyzer.py              # 18 unit and end-to-end tests
+  test_analyzer.py              # 19 unit and end-to-end tests
 ```
 
 ## Testing
@@ -106,7 +106,7 @@ tests/
 python -m unittest discover -s tests
 ```
 
-All 18 tests pass. The end-to-end test replays the sample log and
+All 19 tests pass. The end-to-end test replays the sample log and
 checks that every planted attack is detected, so the demo doubles as
 a regression test.
 
