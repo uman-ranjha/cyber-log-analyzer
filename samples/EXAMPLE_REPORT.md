@@ -7,11 +7,11 @@
 
 ## Findings
 
-### 1. Successful login from 203.0.113.7 after 12 failures — possible compromise
+### 1. Successful login from 203.0.113.7 after 12 failures: possible compromise
 
 - **Severity:** CRITICAL
 - **Status:** OPEN
-- **MITRE ATT&CK:** T1078 — Valid Accounts
+- **MITRE ATT&CK:** T1078: Valid Accounts
 - **Details:** User 'root' logged in successfully from 203.0.113.7, which had 12 failed attempts in the previous 60 minutes. Treat as a potential account compromise until verified.
 
 <details>
@@ -37,7 +37,7 @@
 
 - **Severity:** HIGH
 - **Status:** OPEN
-- **MITRE ATT&CK:** T1110 — Brute Force
+- **MITRE ATT&CK:** T1110: Brute Force
 - **Details:** 12 failed login attempts from 203.0.113.7 within 10 minutes, targeting 4 username(s): admin, root, test, ubuntu.
 
 <details>
@@ -64,7 +64,7 @@
 
 - **Severity:** HIGH
 - **Status:** OPEN
-- **MITRE ATT&CK:** T1110 — Brute Force
+- **MITRE ATT&CK:** T1110: Brute Force
 - **Details:** 14 failed login attempts from 203.0.113.44 within 10 minutes, targeting 7 username(s): guest, mysql, nagios, oracle, postgres.
 
 <details>
@@ -94,8 +94,8 @@
 
 - **Severity:** HIGH
 - **Status:** OPEN
-- **MITRE ATT&CK:** T1110.003 — Brute Force: Password Spraying
-- **Details:** User 'jdoe' saw failed logins from 5 distinct IPs within 60 minutes — a classic spray pattern that evades per-IP rate limits.
+- **MITRE ATT&CK:** T1110.003: Brute Force: Password Spraying
+- **Details:** User 'jdoe' saw failed logins from 5 distinct IPs within 60 minutes: a classic spray pattern that evades per-IP rate limits.
 
 <details>
 <summary>Indicators</summary>
@@ -121,7 +121,7 @@
 
 - **Severity:** MEDIUM
 - **Status:** OPEN
-- **MITRE ATT&CK:** T1590 — Gather Victim Network Information
+- **MITRE ATT&CK:** T1590: Gather Victim Network Information
 - **Details:** 7 attempts against non-existent usernames from 203.0.113.44 (guest, mysql, nagios, oracle, postgres). The attacker is mapping valid accounts for a later brute-force run.
 
 <details>
@@ -148,7 +148,7 @@
 
 - **Severity:** MEDIUM
 - **Status:** OPEN
-- **MITRE ATT&CK:** T1078 — Valid Accounts
+- **MITRE ATT&CK:** T1078: Valid Accounts
 - **Details:** Successful login outside expected hours (00:00-05:00). Verify with the user whether this was legitimate.
 
 <details>

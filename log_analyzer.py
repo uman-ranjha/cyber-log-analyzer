@@ -230,7 +230,7 @@ def detect_password_spray(
                         description=(
                             f"User '{user}' saw failed logins from "
                             f"{len(ips)} distinct IPs within {window_minutes} "
-                            f"minutes — a classic spray pattern that evades "
+                            f"minutes, a classic spray pattern that evades "
                             f"per-IP rate limits."
                         ),
                         indicators={
@@ -254,7 +254,7 @@ def detect_success_after_failure(
     """
     T1078 - Valid Accounts: a successful login from an IP that was failing
     just before. Either the attacker guessed right, or a legitimate user
-    fat-fingered their password — both deserve a look.
+    fat-fingered their password, both deserve a look.
     """
     window = timedelta(minutes=window_minutes)
     failures: dict[str, list[AuthEvent]] = defaultdict(list)
@@ -276,7 +276,7 @@ def detect_success_after_failure(
                 Finding(
                     title=(
                         f"Successful login from {event.ip} after "
-                        f"{len(recent)} failures — possible compromise"
+                        f"{len(recent)} failures, possible compromise"
                     ),
                     severity="critical",
                     technique="T1078",
@@ -449,7 +449,7 @@ def markdown_report(
             f"",
             f"- **Severity:** {finding.severity.upper()}",
             f"- **Status:** {finding.status.upper()}",
-            f"- **MITRE ATT&CK:** {finding.technique} — "
+            f"- **MITRE ATT&CK:** {finding.technique}: "
             f"{finding.technique_name}",
             f"- **Details:** {finding.description}",
             f"",
