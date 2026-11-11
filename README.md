@@ -58,7 +58,7 @@ Findings      : 6
 
 ## How it works
 
-1. Parse. Each syslog line is matched for `Failed`, `Accepted`, and `Invalid user` sshd events and turned into a timestamped event. Syslog leaves the year out, so it defaults to the current year.
+1. Parse. Each syslog line is matched for `Failed`, `Accepted`, and `Invalid user` sshd events and turned into a timestamped event. Syslog leaves the year out, so it defaults to the current year. Pass `--year` to parse logs from another year.
 2. Detect. Five detectors run over those events, using the sliding window described above for brute force and spraying.
 3. Report. Findings are sorted critical to low and written to the console, Markdown, and JSON.
 
